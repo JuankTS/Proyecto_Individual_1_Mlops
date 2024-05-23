@@ -6,20 +6,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 import os
 
 
-# Obtener la ruta del directorio donde se encuentra este script
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Construir rutas relativas a partir de la ubicación del script
-items_path = os.path.join(current_dir, 'Data', 'items.csv')
-reviews_path = os.path.join(current_dir, 'Data', 'Reviews.csv')
-games_path = os.path.join(current_dir, 'Data', 'Steam_games.csv')
-users_path = os.path.join(current_dir, 'Data', 'Users.csv')
-
-# Cargar los datos
-items = pd.read_csv(items_path, nrows=30000)
-reviews = pd.read_csv(reviews_path)
-games = pd.read_csv(games_path)
-users = pd.read_csv(users_path)
+items = pd.read_csv('./Data/items.csv')
+reviews = pd.read_csv('./Data/Reviews.csv')
+games = pd.read_csv('./Data/steam_games.csv')
+users = pd.read_csv('./Data/Users.csv')
 
 
 app= FastAPI(title='Proyecto Integrador #1 Presentado por Juan Camilo Torres')
