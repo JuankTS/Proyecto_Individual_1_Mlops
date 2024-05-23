@@ -3,11 +3,24 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import os
 
-items= pd.read_csv('C:/Users/HP/Documents/Proyectos/PI_1_Mlops/Data/items.csv',nrows=30000)
-reviews= pd.read_csv('C:/Users/HP/Documents/Proyectos/PI_1_Mlops/Data/Reviews.csv')
-games= pd.read_csv('C:/Users/HP/Documents/Proyectos/PI_1_Mlops/Data/Steam_games.csv')
-users= pd.read_csv('C:/Users/HP/Documents/Proyectos/PI_1_Mlops/Data/Users.csv')
+
+# Obtener la ruta del directorio actual de trabajo
+current_dir = os.getcwd()
+
+# Construir rutas relativas
+items_path = os.path.join(current_dir, 'data', 'items.csv')
+reviews_path = os.path.join(current_dir, 'data', 'Reviews.csv')
+games_path = os.path.join(current_dir, 'data', 'Steam_games.csv')
+users_path = os.path.join(current_dir, 'data', 'Users.csv')
+
+# Cargar los datos
+items = pd.read_csv(items_path)
+reviews = pd.read_csv(reviews_path)
+games = pd.read_csv(games_path)
+users = pd.read_csv(users_path)
+
 
 app= FastAPI(title='Proyecto Integrador #1 Presentado por Juan Camilo Torres')
 
