@@ -113,7 +113,8 @@ def best_developer_year( año : int= Query(default= 2012)):
 def developer_reviews_analysis( desarrolladora : str=Query(default='Bethesda Game Studios') ):
     
     '''Ingresa una desarrolladora y te retorna la cantidad de reviews positivas y negativas que tiene'''
-    
+
+    # Seleccionaos las columnas que vamos a usar
     game= games[['id','developer']]
     review= reviews[['item_id', 'senti_negativo','senti_positivo']]
     # Filtramos los datos por el desarrollador en cuestion 
