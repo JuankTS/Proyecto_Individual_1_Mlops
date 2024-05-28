@@ -5,6 +5,7 @@
 - [Planteamiento del problema](#planteamiento-del-problema)
 - [DataSets](#datasets)
 - [Explicación del repositorio](#explicación-del-repositorio)
+- [Links](#links)
 - [Recursos](#recursos)
 
 ### Planteamiento del problema
@@ -69,7 +70,10 @@ En este apartado se explica cómo está estructurado este repositorio:
 - **EndPoint.ipynb:** En este notebook están los endpoints explicados y cómo es su funcionalidad.
 - **Main.py:** Es el archivo donde se encuentra el cuerpo de la API, con los endpoints desarrollados.
 - **Requirements.txt:** Librerías requeridas para hacer el deploy.
-- **Links:** Link de la API una vez hecho el deploy y el video explicativo.
+
+### Links 
+- [Mira el modelo aquí](https://proyecto-individual-1-mlops-9639.onrender.com/docs)
+- [Video de explicación](https://drive.google.com/drive/folders/1U92josASB70qRucss6RobAwH_hrTxT9i?usp=sharing)
 
 ### Recursos
 - [Cómo funciona la búsqueda de similitud](https://pro.arcgis.com/es/pro-app/latest/tool-reference/spatial-statistics/how-similarity-search-works.htm#:~:text=El%20%C3%ADndice%20de%20similitud%20de%20coseno%20oscila%20entre%201%2C0,una%20mayor%20o%20menor%20escala.)

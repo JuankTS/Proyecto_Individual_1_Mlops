@@ -113,22 +113,16 @@ def best_developer_year( año : int= Query(default= 2012)):
 def developer_reviews_analysis( desarrolladora : str=Query(default='Bethesda Game Studios') ):
     
     '''Ingresa una desarrolladora y te retorna la cantidad de reviews positivas y negativas que tiene'''
-
-    # Seleccionaos las columnas que vamos a usar
+    
     game= games[['id','developer']]
     review= reviews[['item_id', 'senti_negativo','senti_positivo']]
-    # Filtramos los datos por el desarrollador en cuestion 
     game= game[game['developer']== desarrolladora]
-    # Hacemos la unidos de los datos para trabajar sobre ellos 
     game_filter= game.merge(review, left_on='id', right_on='item_id', how='inner')
-    # Agrupamos y calculamos el total de reviews positivas y negativas por desarrollador
     game_filter= game_filter.groupby('developer').agg({'senti_negativo':'sum',
                                                        'senti_positivo':'sum'}).reset_index()
-    # Creamos las variables para el diccionario
     developer= game_filter['developer'].iloc[0]
     review_neg= game_filter['senti_negativo'].iloc[0]
     review_pos= game_filter['senti_positivo'].iloc[0]
-    # Retornamos el diccionario 
     return {developer:[{'Positivas': review_pos},{'Negativas':review_neg}]}
 
 @app.get('/Recomendacion Juego', tags=['Recomendacion'])
